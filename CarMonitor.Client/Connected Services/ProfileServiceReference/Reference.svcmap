@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4b492b08-4e07-4462-991e-edf52fc72dc8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/CarMonitor/ProfileService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProfileService.xsd" MetadataType="Schema" ID="f86bc1d9-be8d-41e0-8a99-77e79b416165" SourceId="1" SourceUrl="http://localhost:8080/CarMonitor/ProfileService?xsd=xsd0" />
+    <MetadataFile FileName="ProfileService.wsdl" MetadataType="Wsdl" ID="9267fb47-7339-4f8b-a7e9-4e07afd6eed8" SourceId="1" SourceUrl="http://localhost:8080/CarMonitor/ProfileService?wsdl" />
+    <MetadataFile FileName="ProfileService1.xsd" MetadataType="Schema" ID="a4b7b668-193b-4e71-a516-2bb50f8f2e53" SourceId="1" SourceUrl="http://localhost:8080/CarMonitor/ProfileService?xsd=xsd2" />
+    <MetadataFile FileName="ProfileService.disco" MetadataType="Disco" ID="bfe03444-6cbf-4374-8d57-6e61fc962ca6" SourceId="1" SourceUrl="http://localhost:8080/CarMonitor/ProfileService?disco" />
+    <MetadataFile FileName="ProfileService2.xsd" MetadataType="Schema" ID="b6ab7908-3b2e-4f40-b2af-ba2ae115d836" SourceId="1" SourceUrl="http://localhost:8080/CarMonitor/ProfileService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
