@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarMonitor.Client.ConsumptionServiceReference;
+using CarMonitor.Client.ProfileServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,28 @@ namespace CarMonitor.Client.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        private ProfileDto ProfileDto { get; set; }
+        private ConsumptionDto ConsumptionDto { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void chooseProfileButton_Click(object sender, RoutedEventArgs e)
+        private void profileNameBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.NavigationService.Navigate(new ChooseProfilePage());
+            var client = new ProfileServiceClient();
+            ProfileDto = client.GetProfile(profileNameBox.Text);
+
+            if (ProfileDto != null)
+            {
+                avgConsumptionBox.Text = "129";
+            }
+        }
+
+        private void addConsumptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddConsumptionPage());
         }
     }
 }

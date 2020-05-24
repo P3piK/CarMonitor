@@ -2,19 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CarMonitor.Service.Interface
 {
     [ServiceContract]
-    public interface IProfileService
+    public interface IConsumptionService
     {
         [OperationContract]
-        ProfileDto GetProfile(string name);
+        IEnumerable<ConsumptionDto> FindByProfile(string name);
 
         [OperationContract]
-        void CreateProfile(ProfileDto profile);
+        void Add(ConsumptionDto consumption);
     }
 }

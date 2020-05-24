@@ -2,6 +2,7 @@
 using CarMonitor.Data.Entity;
 using CarMonitor.Service.Dto;
 using CarMonitor.Service.Interface;
+using CarMonitor.Service.Translator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,31 +17,17 @@ namespace CarMonitor.Service.Service
         public void CreateProfile(ProfileDto profileDto)
         {
             var profileData = new ProfileData();
-            var profile = new Profile()
-            {
-                Login = profileDto.Name,
-            };
+            var profile = SimpleTranslator.Translate(profileDto);
 
             profileData.InsertProfile(profile);
         }
 
-        public ProfileDto GetProfile(string login)
+        public ProfileDto GetProfile(string name)
         {
-            return new ProfileDto() { Name = login };
-        }
+            var profileData = new ProfileData();
+            var profile = profileData.GetProfile(name);
 
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return SimpleTranslator.Translate(profile);
         }
     }
 }

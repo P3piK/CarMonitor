@@ -9,7 +9,11 @@ namespace CarMonitor.Data.Entity
     public class Profile
     {
         public int ProfileID { get; set; }
-        public string Login { get; set; }
+        public string Name { get; set; }
+        public FuelType FuelType { get; set; }
+        public int TankCapacity { get; set; }
+        public string Description { get; set; }
+
         public DateTime? ChangeDate { get; set; }
 
     }

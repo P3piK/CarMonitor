@@ -16,8 +16,9 @@
         <TextBox x:Name="lastConsumptionBox" HorizontalAlignment="Left" Height="23" Margin="594,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
         <Label x:Name="avgPriceLabel" Content="Avg Price" HorizontalAlignment="Left" Margin="458,72,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="avgPriceBox" HorizontalAlignment="Left" Height="23" Margin="594,72,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
-        <Button x:Name="chooseProfileButton" Content="Choose Profile" HorizontalAlignment="Left" Margin="88,248,0,0" VerticalAlignment="Top" Width="118" Click="chooseProfileButton_Click"/>
-        <Button x:Name="addConsumptionButton" Content="Add Consumption" HorizontalAlignment="Left" Margin="88,273,0,0" VerticalAlignment="Top" Width="118"/>
+        <Button x:Name="addConsumptionButton" Content="Add Consumption" HorizontalAlignment="Left" Margin="88,273,0,0" VerticalAlignment="Top" Width="118" Click="addConsumptionButton_Click"/>
+        <TextBox x:Name="profileNameBox" HorizontalAlignment="Left" Height="23" Margin="206,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="profileNameBox_TextChanged"/>
+        <Label x:Name="profileNameLabel" Content="Profile Name" HorizontalAlignment="Left" Margin="107,72,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

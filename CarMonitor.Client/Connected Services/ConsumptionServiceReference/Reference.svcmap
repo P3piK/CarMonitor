@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f5e82013-96ff-4e3d-8dc6-b6714ed7d58b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec43003e-a70f-40aa-8179-10fb6a44599d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/CarMonitor/ProfileService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/CarMonitor/ConsumptionService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ae7f699c-0162-495b-b915-3702f4dd3cdd" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b8fe7e25-5fd2-438f-b46b-733eba1f933b" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="765f9e4d-ffe0-445f-aaa2-23b17fe64a51" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
-    <MetadataFile FileName="CarMonitor.Service.Dto.xsd" MetadataType="Schema" ID="e22bc108-7769-4ead-b980-accba97a6e8e" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="552526b1-d9a4-49c9-a45b-ec5d7bbe77ed" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ConsumptionService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3cfbc750-3022-4994-a0c9-58cccbe29759" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ConsumptionService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="06d54236-1612-418b-bd16-1a72671190fb" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ConsumptionService/mex" />
+    <MetadataFile FileName="CarMonitor.Service.Dto.xsd" MetadataType="Schema" ID="2b381d86-fb8d-4c5c-81f2-25e1f87482f8" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ConsumptionService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

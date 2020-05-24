@@ -23,9 +23,9 @@ namespace CarMonitor.Data.Data
             Context.Dispose();
         }
 
-        public Profile GetProfile(string login)
+        public Profile GetProfile(string name)
         {
-            return Context.Profiles.Where(p => p.Login == login).Single();
+            return Context.Profiles.Where(p => p.Name == name).Single();
         }
 
         public void InsertProfile(Profile profile)

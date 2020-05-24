@@ -79,16 +79,16 @@ namespace CarMonitor.Client.ProfileServiceReference {
     public interface IProfileService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfileService/GetProfile", ReplyAction="http://tempuri.org/IProfileService/GetProfileResponse")]
-        CarMonitor.Client.ProfileServiceReference.ProfileDto GetProfile(string login);
+        CarMonitor.Client.ProfileServiceReference.ProfileDto GetProfile(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfileService/GetProfile", ReplyAction="http://tempuri.org/IProfileService/GetProfileResponse")]
-        System.Threading.Tasks.Task<CarMonitor.Client.ProfileServiceReference.ProfileDto> GetProfileAsync(string login);
+        System.Threading.Tasks.Task<CarMonitor.Client.ProfileServiceReference.ProfileDto> GetProfileAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfileService/CreateProfile", ReplyAction="http://tempuri.org/IProfileService/CreateProfileResponse")]
-        int CreateProfile(CarMonitor.Client.ProfileServiceReference.ProfileDto profile);
+        void CreateProfile(CarMonitor.Client.ProfileServiceReference.ProfileDto profile);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProfileService/CreateProfile", ReplyAction="http://tempuri.org/IProfileService/CreateProfileResponse")]
-        System.Threading.Tasks.Task<int> CreateProfileAsync(CarMonitor.Client.ProfileServiceReference.ProfileDto profile);
+        System.Threading.Tasks.Task CreateProfileAsync(CarMonitor.Client.ProfileServiceReference.ProfileDto profile);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,19 +118,19 @@ namespace CarMonitor.Client.ProfileServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public CarMonitor.Client.ProfileServiceReference.ProfileDto GetProfile(string login) {
-            return base.Channel.GetProfile(login);
+        public CarMonitor.Client.ProfileServiceReference.ProfileDto GetProfile(string name) {
+            return base.Channel.GetProfile(name);
         }
         
-        public System.Threading.Tasks.Task<CarMonitor.Client.ProfileServiceReference.ProfileDto> GetProfileAsync(string login) {
-            return base.Channel.GetProfileAsync(login);
+        public System.Threading.Tasks.Task<CarMonitor.Client.ProfileServiceReference.ProfileDto> GetProfileAsync(string name) {
+            return base.Channel.GetProfileAsync(name);
         }
         
-        public int CreateProfile(CarMonitor.Client.ProfileServiceReference.ProfileDto profile) {
-            return base.Channel.CreateProfile(profile);
+        public void CreateProfile(CarMonitor.Client.ProfileServiceReference.ProfileDto profile) {
+            base.Channel.CreateProfile(profile);
         }
         
-        public System.Threading.Tasks.Task<int> CreateProfileAsync(CarMonitor.Client.ProfileServiceReference.ProfileDto profile) {
+        public System.Threading.Tasks.Task CreateProfileAsync(CarMonitor.Client.ProfileServiceReference.ProfileDto profile) {
             return base.Channel.CreateProfileAsync(profile);
         }
     }
