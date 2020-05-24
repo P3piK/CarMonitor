@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:CarMonitor.Client"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="394" Margin="10,10,0,0" VerticalAlignment="Top" Width="780"/>
+    <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="394" Margin="10,10,0,0" VerticalAlignment="Top" Width="780" NavigationUIVisibility="Hidden"/>
 </Window>

@@ -31,7 +31,6 @@ namespace CarMonitor.Data.Data
         public void InsertProfile(Profile profile)
         {
             profile.ChangeDate = DateTime.Now;
-            Context.Profiles.Add(profile);
         }
 
     }
