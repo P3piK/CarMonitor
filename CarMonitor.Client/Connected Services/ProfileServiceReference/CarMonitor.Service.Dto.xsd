@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CarMonitor.Data.Entity" />
   <xs:complexType name="ProfileDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CarMonitor.Data.Entity" minOccurs="0" name="FuelType" type="q1:FuelType" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TankCapacity" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProfileDto" nillable="true" type="tns:ProfileDto" />

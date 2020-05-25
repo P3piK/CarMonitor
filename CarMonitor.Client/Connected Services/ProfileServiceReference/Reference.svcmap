@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b8fe7e25-5fd2-438f-b46b-733eba1f933b" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="765f9e4d-ffe0-445f-aaa2-23b17fe64a51" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
     <MetadataFile FileName="CarMonitor.Service.Dto.xsd" MetadataType="Schema" ID="e22bc108-7769-4ead-b980-accba97a6e8e" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
+    <MetadataFile FileName="CarMonitor.Data.Entity.xsd" MetadataType="Schema" ID="2af055d9-37ca-4d33-ba4e-ad9c41108cd7" SourceId="1" SourceUrl="http://localhost:8733/CarMonitor/ProfileService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

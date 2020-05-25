@@ -17,7 +17,8 @@ namespace CarMonitor.Data.Entity
     {
         public int ConsumptionID { get; set; }
         public Profile Profile { get; set; }
-        public FuelType FuelType { get; set; }
+        public FuelType? FuelType { get; set; }
+        public double FuelVolume { get; set; }
         public double Distance { get; set; }
         public double Price { get; set; }
         public double TankLevel { get; set; }

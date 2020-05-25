@@ -1,30 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" />
-  <xs:element name="FindByProfile">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FindByProfileResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" minOccurs="0" name="FindByProfileResult" nillable="true" type="q1:ArrayOfConsumptionDto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" minOccurs="0" name="consumption" nillable="true" type="q2:ConsumptionDto" />
+        <xs:element minOccurs="0" name="profileName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" minOccurs="0" name="consumptionDto" nillable="true" type="q1:ConsumptionDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateAvgConsumption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateAvgConsumptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" minOccurs="0" name="CalculateAvgConsumptionResult" nillable="true" type="q2:AvgConsumptionDto" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

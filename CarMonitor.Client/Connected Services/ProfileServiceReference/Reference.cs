@@ -26,7 +26,16 @@ namespace CarMonitor.Client.ProfileServiceReference {
         private System.DateTime ChangeDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CarMonitor.Client.ProfileServiceReference.FuelType FuelTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TankCapacityField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -52,6 +61,32 @@ namespace CarMonitor.Client.ProfileServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CarMonitor.Client.ProfileServiceReference.FuelType FuelType {
+            get {
+                return this.FuelTypeField;
+            }
+            set {
+                if ((this.FuelTypeField.Equals(value) != true)) {
+                    this.FuelTypeField = value;
+                    this.RaisePropertyChanged("FuelType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
             get {
                 return this.NameField;
@@ -64,6 +99,19 @@ namespace CarMonitor.Client.ProfileServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TankCapacity {
+            get {
+                return this.TankCapacityField;
+            }
+            set {
+                if ((this.TankCapacityField.Equals(value) != true)) {
+                    this.TankCapacityField = value;
+                    this.RaisePropertyChanged("TankCapacity");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -72,6 +120,20 @@ namespace CarMonitor.Client.ProfileServiceReference {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FuelType", Namespace="http://schemas.datacontract.org/2004/07/CarMonitor.Data.Entity")]
+    public enum FuelType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Petrol = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Diesel = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Lpg = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

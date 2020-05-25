@@ -11,10 +11,13 @@ namespace CarMonitor.Service.Interface
     [ServiceContract]
     public interface IConsumptionService
     {
-        [OperationContract]
-        IEnumerable<ConsumptionDto> FindByProfile(string name);
+        //[OperationContract]
+        //IEnumerable<ConsumptionDto> FindByProfile(string name);
 
         [OperationContract]
-        void Add(ConsumptionDto consumption);
+        void Add(string profileName, ConsumptionDto consumptionDto);
+
+        [OperationContract]
+        AvgConsumptionDto CalculateAvgConsumption(string name);
     }
 }

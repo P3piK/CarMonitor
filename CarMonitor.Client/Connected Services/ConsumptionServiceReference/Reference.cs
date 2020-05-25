@@ -23,12 +23,6 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double AvgConsumptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double AvgPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -38,13 +32,7 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
         private double FuelVolumeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LastConsumptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PricePerLitreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double TotalPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -53,32 +41,6 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double AvgConsumption {
-            get {
-                return this.AvgConsumptionField;
-            }
-            set {
-                if ((this.AvgConsumptionField.Equals(value) != true)) {
-                    this.AvgConsumptionField = value;
-                    this.RaisePropertyChanged("AvgConsumption");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double AvgPrice {
-            get {
-                return this.AvgPriceField;
-            }
-            set {
-                if ((this.AvgPriceField.Equals(value) != true)) {
-                    this.AvgPriceField = value;
-                    this.RaisePropertyChanged("AvgPrice");
-                }
             }
         }
         
@@ -122,19 +84,6 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LastConsumption {
-            get {
-                return this.LastConsumptionField;
-            }
-            set {
-                if ((this.LastConsumptionField.Equals(value) != true)) {
-                    this.LastConsumptionField = value;
-                    this.RaisePropertyChanged("LastConsumption");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public double PricePerLitre {
             get {
                 return this.PricePerLitreField;
@@ -143,6 +92,86 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
                 if ((this.PricePerLitreField.Equals(value) != true)) {
                     this.PricePerLitreField = value;
                     this.RaisePropertyChanged("PricePerLitre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AvgConsumptionDto", Namespace="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto")]
+    [System.SerializableAttribute()]
+    public partial class AvgConsumptionDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AvgConsumptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AvgPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LastConsumptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TotalPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AvgConsumption {
+            get {
+                return this.AvgConsumptionField;
+            }
+            set {
+                if ((this.AvgConsumptionField.Equals(value) != true)) {
+                    this.AvgConsumptionField = value;
+                    this.RaisePropertyChanged("AvgConsumption");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AvgPrice {
+            get {
+                return this.AvgPriceField;
+            }
+            set {
+                if ((this.AvgPriceField.Equals(value) != true)) {
+                    this.AvgPriceField = value;
+                    this.RaisePropertyChanged("AvgPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double LastConsumption {
+            get {
+                return this.LastConsumptionField;
+            }
+            set {
+                if ((this.LastConsumptionField.Equals(value) != true)) {
+                    this.LastConsumptionField = value;
+                    this.RaisePropertyChanged("LastConsumption");
                 }
             }
         }
@@ -174,17 +203,17 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ConsumptionServiceReference.IConsumptionService")]
     public interface IConsumptionService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/FindByProfile", ReplyAction="http://tempuri.org/IConsumptionService/FindByProfileResponse")]
-        CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto[] FindByProfile(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/FindByProfile", ReplyAction="http://tempuri.org/IConsumptionService/FindByProfileResponse")]
-        System.Threading.Tasks.Task<CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto[]> FindByProfileAsync(string name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/Add", ReplyAction="http://tempuri.org/IConsumptionService/AddResponse")]
+        void Add(string profileName, CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumptionDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/Add", ReplyAction="http://tempuri.org/IConsumptionService/AddResponse")]
-        void Add(CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumption);
+        System.Threading.Tasks.Task AddAsync(string profileName, CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumptionDto);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/Add", ReplyAction="http://tempuri.org/IConsumptionService/AddResponse")]
-        System.Threading.Tasks.Task AddAsync(CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumption);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/CalculateAvgConsumption", ReplyAction="http://tempuri.org/IConsumptionService/CalculateAvgConsumptionResponse")]
+        CarMonitor.Client.ConsumptionServiceReference.AvgConsumptionDto CalculateAvgConsumption(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumptionService/CalculateAvgConsumption", ReplyAction="http://tempuri.org/IConsumptionService/CalculateAvgConsumptionResponse")]
+        System.Threading.Tasks.Task<CarMonitor.Client.ConsumptionServiceReference.AvgConsumptionDto> CalculateAvgConsumptionAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -214,20 +243,20 @@ namespace CarMonitor.Client.ConsumptionServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto[] FindByProfile(string name) {
-            return base.Channel.FindByProfile(name);
+        public void Add(string profileName, CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumptionDto) {
+            base.Channel.Add(profileName, consumptionDto);
         }
         
-        public System.Threading.Tasks.Task<CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto[]> FindByProfileAsync(string name) {
-            return base.Channel.FindByProfileAsync(name);
+        public System.Threading.Tasks.Task AddAsync(string profileName, CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumptionDto) {
+            return base.Channel.AddAsync(profileName, consumptionDto);
         }
         
-        public void Add(CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumption) {
-            base.Channel.Add(consumption);
+        public CarMonitor.Client.ConsumptionServiceReference.AvgConsumptionDto CalculateAvgConsumption(string name) {
+            return base.Channel.CalculateAvgConsumption(name);
         }
         
-        public System.Threading.Tasks.Task AddAsync(CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto consumption) {
-            return base.Channel.AddAsync(consumption);
+        public System.Threading.Tasks.Task<CarMonitor.Client.ConsumptionServiceReference.AvgConsumptionDto> CalculateAvgConsumptionAsync(string name) {
+            return base.Channel.CalculateAvgConsumptionAsync(name);
         }
     }
 }

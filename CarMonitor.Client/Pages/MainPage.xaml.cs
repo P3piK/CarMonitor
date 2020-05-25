@@ -22,28 +22,68 @@ namespace CarMonitor.Client.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        private ProfileServiceClient profileClient;
+        private ConsumptionServiceClient consumptionClient;
+
+        #region Properties
         private ProfileDto ProfileDto { get; set; }
+
         private ConsumptionDto ConsumptionDto { get; set; }
+
+        private ProfileServiceClient ProfileClient
+        {
+            get
+            {
+                if (profileClient == null)
+                {
+                    profileClient = new ProfileServiceClient();
+                }
+
+                return profileClient;
+            }
+        }
+
+        private ConsumptionServiceClient ConsumptionClient
+        {
+            get
+            {
+                if (consumptionClient == null)
+                {
+                    consumptionClient = new ConsumptionServiceClient();
+                }
+
+                return consumptionClient;
+            }
+        }
+        #endregion
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void profileNameBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var client = new ProfileServiceClient();
-            ProfileDto = client.GetProfile(profileNameBox.Text);
-
-            if (ProfileDto != null)
-            {
-                avgConsumptionBox.Text = "129";
-            }
-        }
-
         private void addConsumptionButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new AddConsumptionPage());
+        }
+
+        private void getProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileDto = ProfileClient.GetProfile(profileNameBox.Text);
+
+            if (ProfileDto != null)
+            {
+                notFoundLabel.Visibility = Visibility.Hidden;
+
+                var avgData = ConsumptionClient.CalculateAvgConsumption(profileNameBox.Text);
+                avgConsumptionBox.Text = avgData.AvgConsumption.ToString("F2");
+                avgPriceBox.Text = avgData.AvgPrice.ToString("F2");
+                lastConsumptionBox.Text = avgData.LastConsumption.ToString("F2");
+            }
+            else
+            {
+                notFoundLabel.Visibility = Visibility.Visible;
+            }
         }
     }
 }

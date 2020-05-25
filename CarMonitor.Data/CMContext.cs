@@ -1,4 +1,5 @@
 ﻿using CarMonitor.Data.Entity;
+using CarMonitor.Data.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,5 +18,11 @@ namespace CarMonitor.Data
 
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Consumption> Consumptions { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<CMContext>(new MigrateDatabaseToLatestVersion<CMContext, Configuration>());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

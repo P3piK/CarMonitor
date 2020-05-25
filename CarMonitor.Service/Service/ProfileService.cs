@@ -14,20 +14,40 @@ namespace CarMonitor.Service.Service
 {
     public class ProfileService : IProfileService
     {
+        private ProfileData profileData;
+
+        private ProfileData ProfileData
+        {
+            get
+            {
+                if (profileData == null)
+                {
+                    profileData = new ProfileData();
+                }
+
+                return profileData;
+            }
+
+        }
+
         public void CreateProfile(ProfileDto profileDto)
         {
-            var profileData = new ProfileData();
             var profile = SimpleTranslator.Translate(profileDto);
 
-            profileData.InsertProfile(profile);
+            ProfileData.InsertProfile(profile);
         }
 
         public ProfileDto GetProfile(string name)
         {
-            var profileData = new ProfileData();
-            var profile = profileData.GetProfile(name);
+            var profile = ProfileData.GetProfile(name);
+            var ret = default(ProfileDto);
 
-            return SimpleTranslator.Translate(profile);
+            if (profile != null)
+            {
+                ret = SimpleTranslator.Translate(profile);
+            }
+
+            return ret;
         }
     }
 }

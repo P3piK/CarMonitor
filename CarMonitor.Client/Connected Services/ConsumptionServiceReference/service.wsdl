@@ -7,32 +7,32 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/CarMonitor.Service.Dto" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IConsumptionService_FindByProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:FindByProfile" />
-  </wsdl:message>
-  <wsdl:message name="IConsumptionService_FindByProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FindByProfileResponse" />
-  </wsdl:message>
   <wsdl:message name="IConsumptionService_Add_InputMessage">
     <wsdl:part name="parameters" element="tns:Add" />
   </wsdl:message>
   <wsdl:message name="IConsumptionService_Add_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddResponse" />
   </wsdl:message>
+  <wsdl:message name="IConsumptionService_CalculateAvgConsumption_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateAvgConsumption" />
+  </wsdl:message>
+  <wsdl:message name="IConsumptionService_CalculateAvgConsumption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateAvgConsumptionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IConsumptionService">
-    <wsdl:operation name="FindByProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/IConsumptionService/FindByProfile" message="tns:IConsumptionService_FindByProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IConsumptionService/FindByProfileResponse" message="tns:IConsumptionService_FindByProfile_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/IConsumptionService/Add" message="tns:IConsumptionService_Add_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IConsumptionService/AddResponse" message="tns:IConsumptionService_Add_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CalculateAvgConsumption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumptionService/CalculateAvgConsumption" message="tns:IConsumptionService_CalculateAvgConsumption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumptionService/CalculateAvgConsumptionResponse" message="tns:IConsumptionService_CalculateAvgConsumption_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IConsumptionService" type="tns:IConsumptionService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="FindByProfile">
-      <soap:operation soapAction="http://tempuri.org/IConsumptionService/FindByProfile" style="document" />
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IConsumptionService/Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -40,8 +40,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <soap:operation soapAction="http://tempuri.org/IConsumptionService/Add" style="document" />
+    <wsdl:operation name="CalculateAvgConsumption">
+      <soap:operation soapAction="http://tempuri.org/IConsumptionService/CalculateAvgConsumption" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

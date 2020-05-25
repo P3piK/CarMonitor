@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarMonitor.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -15,5 +16,14 @@ namespace CarMonitor.Service.Dto
         
         [DataMember]
         public DateTime ChangeDate { get; set; }
+
+        [DataMember]
+        public FuelType FuelType { get; set; }
+
+        [DataMember]
+        public int TankCapacity { get; set; }
+        
+        [DataMember]
+        public string Description { get; set; }
     }
 }

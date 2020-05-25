@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 namespace CarMonitor.Service.Dto
 {
     [DataContract]
-    public class ConsumptionDto
+    public class AvgConsumptionDto
     {
         [DataMember]
-        public double Distance { get; set; }
+        public double TotalPrice { get; set; }
+
         [DataMember]
-        public double FuelVolume { get; set; }
+        public double AvgPrice { get; set; }
+
         [DataMember]
-        public double PricePerLitre { get; set; }
+        public double AvgConsumption { get; set; }
+
         [DataMember]
-        public DateTime Date { get; set; }
+        public double LastConsumption { get; set; }
     }
 }

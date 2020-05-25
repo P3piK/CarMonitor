@@ -52,14 +52,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CMContext.cs" />
+    <Compile Include="Data\ConsumptionData.cs" />
     <Compile Include="Data\ProfileData.cs" />
     <Compile Include="Entity\Consumption.cs" />
     <Compile Include="Entity\Profile.cs" />
+    <Compile Include="Migrations\202005250703403_InitialCreate.cs" />
+    <Compile Include="Migrations\202005250703403_InitialCreate.designer.cs">
+      <DependentUpon>202005250703403_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202005250703403_InitialCreate.resx">
+      <DependentUpon>202005250703403_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

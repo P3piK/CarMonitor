@@ -28,15 +28,32 @@ namespace CarMonitor.Client.Pages
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            var profile = new ProfileDto() 
+            var client = new ProfileServiceClient();
+            var profileDto = new ProfileDto() 
             { 
                 Name = nameBox.Text
             };
 
-            var client = new ProfileServiceClient();
-            client.CreateProfile(profile);
+            var profile = client.GetProfile(profileDto.Name);
+            if (profile == null)
+            {
+                client.CreateProfile(profileDto);
+                this.NavigationService.Navigate(new CreateProfilePage());
+            }
+            else
+            {
+                incorrectNameLabel.Visibility = Visibility.Visible;
+            }
+        }
 
-            textBox.Text = client.GetProfile(nameBox.Text).Name;
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddConsumptionPage());
+        }
+
+        private void fuelTypeComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            fuelTypeComboBox.ItemsSource = Enum.GetValues(typeof(FuelType)).Cast<FuelType>();
         }
     }
 }

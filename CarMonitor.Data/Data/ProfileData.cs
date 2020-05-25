@@ -25,12 +25,15 @@ namespace CarMonitor.Data.Data
 
         public Profile GetProfile(string name)
         {
-            return Context.Profiles.Where(p => p.Name == name).Single();
+            return Context.Profiles.Where(p => p.Name.ToLower() == name.ToLower()).SingleOrDefault();
         }
 
         public void InsertProfile(Profile profile)
         {
             profile.ChangeDate = DateTime.Now;
+            Context.Profiles.Add(profile);
+
+            Context.SaveChanges();
         }
 
     }

@@ -86,10 +86,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ChooseProfilePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\CreateProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,9 +98,6 @@
   <ItemGroup>
     <Compile Include="Pages\AddConsumptionPage.xaml.cs">
       <DependentUpon>AddConsumptionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ChooseProfilePage.xaml.cs">
-      <DependentUpon>ChooseProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CreateProfilePage.xaml.cs">
       <DependentUpon>CreateProfilePage.xaml</DependentUpon>
@@ -129,7 +122,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ConsumptionServiceReference\CarMonitor.Client.ConsumptionServiceReference.ConsumptionDto.datasource">
+    <None Include="Connected Services\ConsumptionServiceReference\CarMonitor.Client.ConsumptionServiceReference.AvgConsumptionDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ConsumptionServiceReference\CarMonitor.Service.Dto.xsd">
@@ -144,6 +137,9 @@
     </None>
     <None Include="Connected Services\ProfileServiceReference\CarMonitor.Client.ProfileServiceReference.ProfileDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProfileServiceReference\CarMonitor.Data.Entity.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProfileServiceReference\CarMonitor.Service.Dto.xsd">
       <SubType>Designer</SubType>

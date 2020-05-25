@@ -57,6 +57,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\AvgConsumptionDto.cs" />
     <Compile Include="Dto\ConsumptionDto.cs" />
     <Compile Include="Dto\ProfileDto.cs" />
     <Compile Include="Interface\IConsumptionService.cs" />
