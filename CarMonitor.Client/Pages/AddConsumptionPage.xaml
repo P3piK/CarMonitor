@@ -15,14 +15,14 @@
         <TextBox x:Name="priceTextBox" HorizontalAlignment="Left" Height="22" Margin="138,237,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button x:Name="newProfileButton" Content="New Profile" HorizontalAlignment="Left" Margin="352,75,0,0" VerticalAlignment="Top" Width="76" Click="newProfileButton_Click"/>
         <Button x:Name="addConsumptionButton" Content="Save" HorizontalAlignment="Left" Margin="183,355,0,0" VerticalAlignment="Top" Width="75" Click="addConsumptionButton_Click" IsEnabled="False"/>
-        <DatePicker x:Name="date" HorizontalAlignment="Left" Margin="406,182,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <DatePicker x:Name="date" HorizontalAlignment="Left" Margin="138,264,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="fuelVolumeLabel" Content="Fuel Volume" HorizontalAlignment="Left" Margin="58,178,0,0" VerticalAlignment="Top"/>
         <Label x:Name="distanceLabel" Content="Distance" HorizontalAlignment="Left" Margin="78,209,0,0" VerticalAlignment="Top"/>
         <Label x:Name="priceLabel" Content="Price per litre" HorizontalAlignment="Left" Margin="58,233,0,0" VerticalAlignment="Top"/>
         <Label x:Name="profileNaneLabel" Content="Profile Name" HorizontalAlignment="Left" Margin="54,72,0,0" VerticalAlignment="Top"/>
         <Button x:Name="getProfileButton" Content="Get Profile" HorizontalAlignment="Left" Margin="263,75,0,0" VerticalAlignment="Top" Width="75" Click="getProfileButton_Click"/>
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="78,355,0,0" VerticalAlignment="Top" Width="75" Click="backButton_Click"/>
-        <Label x:Name="dateLabel" Content="Date" HorizontalAlignment="Left" Margin="371,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.314,0.115"/>
+        <Label x:Name="dateLabel" Content="Date" HorizontalAlignment="Left" Margin="103,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.314,0.115"/>
         <Label x:Name="notFoundLabel" Content="Not found" HorizontalAlignment="Left" Margin="193,98,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
 
     </Grid>

@@ -33,9 +33,9 @@ namespace CarMonitor.Client.Pages
             { 
                 Name = nameBox.Text
             };
-
+            
             var profile = client.GetProfile(profileDto.Name);
-            if (profile == null)
+            if (profile == null && !String.IsNullOrEmpty(profileDto.Name))
             {
                 client.CreateProfile(profileDto);
                 this.NavigationService.Navigate(new CreateProfilePage());
